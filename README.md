@@ -1,47 +1,60 @@
-📌 DNS Security Assessment – July 2025
+# 📌 DNS Security Assessment – July 2025
 
-Small DNS auditing tool built during my internship at Pwn and Patch (July 2025).
-It analyzes DNS records, detects misconfigurations, applies a simple risk scoring system, and generates a CSV report.
+This project was completed in **July 2025** during my internship at **Pwn and Patch**.  
+It is a lightweight DNS auditing tool that analyzes DNS configurations, detects common misconfigurations, evaluates security risks, and generates a detailed CSV report.
 
-🔍 What It Does
+The tool automates DNS inspection to help identify insecure records, weak email configurations, and potential domain takeover vectors.
 
-Fetches DNS records (A, MX, CNAME, TXT, NS, SOA)
+---
 
-Checks for common security issues
+## 🔍 What It Does
 
-Missing/weak SPF
+The DNS assessment tool performs:
 
-Missing DMARC
+- Retrieval of DNS records:
+  - **A**, **MX**, **CNAME**, **TXT**, **NS**, **SOA**
+- Detection of common security issues:
+  - Missing or weak **SPF**
+  - Missing or invalid **DMARC**
+  - Suspicious or malformed **TXT** records
+  - Misconfigured or non-resolving **MX** entries
+  - Potential **subdomain takeover** scenarios
+- Basic risk scoring using a custom rule-based scoring engine  
+- Export of all results into **report.csv**
+- Subdomain enumeration using the **subdomains4.txt** wordlist
 
-Suspicious TXT entries
+---
 
-Misconfigured MX
+## 🗂️ Files
 
-Potential takeover risks
-
-Scores each issue based on severity
-
-Exports everything into report.csv
-
-Supports subdomain enumeration via subdomains4.txt
-
-🗂️ Files
-main.rb              # Runs the whole DNS assessment
-dns_analyzer.rb      # DNS record extraction & validation
-risk_scoring.rb      # Basic risk scoring logic
-report_generator.rb  # Creates report.csv
+```
+main.rb              # Runs the full DNS assessment workflow
+dns_analyzer.rb      # DNS record extraction, parsing, and validation
+risk_scoring.rb      # Rule-based risk severity scoring
+report_generator.rb  # Creates and formats the CSV output file
 subdomains4.txt      # Subdomain enumeration wordlist
-report.csv           # Output file
+report.csv           # Generated output report
+```
 
-🚀 Usage
+---
+
+## 🚀 Usage
+
+Run the assessment:
+
+```bash
 ruby main.rb
+```
 
+Results will be saved automatically in:
 
-The results will be saved in:
-
+```
 report.csv
+```
 
-👤 Author
+---
 
-Raed Boussaa
+## 👤 Author
+
+**Raed Boussaa**  
 Telecom & Cybersecurity Engineering Student – ENIT
