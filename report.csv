@@ -1,0 +1,16 @@
+======================== DOMAIN ANALYSIS REPORT ========================
+Domain:,enit.rnu.tn
+Generated:,2025-11-04 09:44
+
+---------------------------- DNS STATUS -------------------------------
+SPF,DMARC,DNSSEC,TTL,PTR Exists,PTR Matches,Apex CNAME,NS Recursion
+true,true,false,21094,true,false,false,false
+
+------------------------- RISK SCORING --------------------------------
+Risk Score,Risk Level
+5.5,Low
+
+---------------------- Misconfiguration Details -----------------------
+Type,Severity
+Missing DNSSEC,4.0
+PTR mismatch,1.5
